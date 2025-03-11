@@ -58,7 +58,7 @@ latzona = 45.85
 longzona = 9.40
 
 # Caricamento del file Excel
-file_path = r"inputapp.xlsx"
+file_path = "inputapp.xlsx"
 df = pd.read_excel(file_path)
 
 # Sostituisci la virgola con il punto nelle coordinate
