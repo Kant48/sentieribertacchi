@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_4d7af51ddd45ee5de1e2ae401c87ebab {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_4d7af51ddd45ee5de1e2ae401c87ebab" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_4d7af51ddd45ee5de1e2ae401c87ebab = L.map(
+                "map_4d7af51ddd45ee5de1e2ae401c87ebab",
+                {
+                    center: [45.85, 9.4],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_aeef011cab5aba151d693f47d2b79a7e = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_aeef011cab5aba151d693f47d2b79a7e.addTo(map_4d7af51ddd45ee5de1e2ae401c87ebab);
+        
+    
+            var tile_layer_340ae57f850eba4dbf8243308d743017 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_340ae57f850eba4dbf8243308d743017.addTo(map_4d7af51ddd45ee5de1e2ae401c87ebab);
+        
+    
+            var tile_layer_32b35ed93b33445539fa10abcad534b4 = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Tiles \u0026copy; Esri \u0026mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_32b35ed93b33445539fa10abcad534b4.addTo(map_4d7af51ddd45ee5de1e2ae401c87ebab);
+        
+    
+            var marker_d8dfb0dc752991b4cb3fa9d6dcb8972d = L.marker(
+                [45.86396, 9.35977],
+                {
+}
+            ).addTo(map_4d7af51ddd45ee5de1e2ae401c87ebab);
+        
+    
+            var icon_ba9a74662267a58c9278dd41711d8984 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ce4786014f726a93c473efcefc918ffd = L.popup({
+  "maxWidth": 650,
+});
+
+        
+            
+                var html_d93d0e1721565414980f64bd570d53b4 = $(`<div id="html_d93d0e1721565414980f64bd570d53b4" style="width: 100.0%; height: 100.0%;"><b>Sasso di PREGUDA</b><br>una delle località più belle  presenza di massi erratici</b><br>facile panoramico possibilità bagno. Partenza P.za Rosse Valmadrera</div>`)[0];
+                popup_ce4786014f726a93c473efcefc918ffd.setContent(html_d93d0e1721565414980f64bd570d53b4);
+            
+        
+
+        marker_d8dfb0dc752991b4cb3fa9d6dcb8972d.bindPopup(popup_ce4786014f726a93c473efcefc918ffd)
+        ;
+
+        
+    
+    
+                marker_d8dfb0dc752991b4cb3fa9d6dcb8972d.setIcon(icon_ba9a74662267a58c9278dd41711d8984);
+            
+    
+            var circle_marker_847610067fa3c5ed076e17445e30cd60 = L.circleMarker(
+                [45.85548, 9.35523],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_4d7af51ddd45ee5de1e2ae401c87ebab);
+        
+    
+        var popup_57f568d90af6640bcd59c6781aa31cb8 = L.popup({
+  "maxWidth": 650,
+});
+
+        
+            
+                var html_5b935df41e96f5b69fba9b06dc12bf43 = $(`<div id="html_5b935df41e96f5b69fba9b06dc12bf43" style="width: 100.0%; height: 100.0%;"> 					<b>sentiero delle vasche </b><br> 					<strong>Note del passaggio:</strong><br> 					facile panoramico possibilità bagno. Partenza P.za Rosse Valmadrera<br><br> 					<a href="https://drive.google.com/uc?id=1UN3ak6JlzZlk6rZBg1E53312wmhBDBDS" target="_blank"><img src="https://drive.google.com/uc?id=1UN3ak6JlzZlk6rZBg1E53312wmhBDBDS" style="max-width: 200px; max-height: 150px; display: block; margin: 0 auto;"></a><br> 					<span style="color: blue; cursor: pointer;" onclick="alert('Chiama il numero: 34vvv xxxxxx');">Vuoi una guida?</span> 					</div>`)[0];
+                popup_57f568d90af6640bcd59c6781aa31cb8.setContent(html_5b935df41e96f5b69fba9b06dc12bf43);
+            
+        
+
+        circle_marker_847610067fa3c5ed076e17445e30cd60.bindPopup(popup_57f568d90af6640bcd59c6781aa31cb8)
+        ;
+
+        
+    
+    
+            var marker_64bf0f90c99b1a2391ab44f6e8c138ff = L.marker(
+                [45.85548, 9.35523],
+                {
+}
+            ).addTo(map_4d7af51ddd45ee5de1e2ae401c87ebab);
+        
+    
+            var div_icon_79b150be6690c2d4328be733195d643a = L.divIcon({
+  "html": "\u003cdiv style=\u0027font-family: Arial; font-size: 12px; font-weight: bold; color: black;\u0027\u003e1\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_64bf0f90c99b1a2391ab44f6e8c138ff.setIcon(div_icon_79b150be6690c2d4328be733195d643a);
+        
+    
+        var popup_8f9a3885dea8f22f0afe2b6532aeee9c = L.popup({
+  "maxWidth": 650,
+});
+
+        
+            
+                var html_b06e3d4327dea317994f84f098ad1f28 = $(`<div id="html_b06e3d4327dea317994f84f098ad1f28" style="width: 100.0%; height: 100.0%;"> 					<b>sentiero delle vasche </b><br> 					<strong>Note del passaggio:</strong><br> 					facile panoramico possibilità bagno. Partenza P.za Rosse Valmadrera<br><br> 					<a href="https://drive.google.com/uc?id=1UN3ak6JlzZlk6rZBg1E53312wmhBDBDS" target="_blank"><img src="https://drive.google.com/uc?id=1UN3ak6JlzZlk6rZBg1E53312wmhBDBDS" style="max-width: 200px; max-height: 150px; display: block; margin: 0 auto;"></a><br> 					<span style="color: blue; cursor: pointer;" onclick="alert('Chiama il numero: 34vvv xxxxxx');">Vuoi una guida?</span> 					</div>`)[0];
+                popup_8f9a3885dea8f22f0afe2b6532aeee9c.setContent(html_b06e3d4327dea317994f84f098ad1f28);
+            
+        
+
+        marker_64bf0f90c99b1a2391ab44f6e8c138ff.bindPopup(popup_8f9a3885dea8f22f0afe2b6532aeee9c)
+        ;
+
+        
+    
+    
+                marker_64bf0f90c99b1a2391ab44f6e8c138ff.setIcon(div_icon_79b150be6690c2d4328be733195d643a);
+            
+    
+            var circle_marker_8216626b80118468d993f4b3d34ee306 = L.circleMarker(
+                [45.85491, 9.35759],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_4d7af51ddd45ee5de1e2ae401c87ebab);
+        
+    
+        var popup_35d7a460f08d23658e51c3648dddd17f = L.popup({
+  "maxWidth": 650,
+});
+
+        
+            
+                var html_facfeef82ac84339826e74774ac9d4db = $(`<div id="html_facfeef82ac84339826e74774ac9d4db" style="width: 100.0%; height: 100.0%;"> 					<b>sentiero delle vasche </b><br> 					<strong>Note del passaggio:</strong><br> 					prima svolta verso sentiero<br><br> 					<a href="https://drive.google.com/uc?id=1UN3ak6JlzZlk6rZBg1E53312wmhBDBDS" target="_blank"><img src="https://drive.google.com/uc?id=1UN3ak6JlzZlk6rZBg1E53312wmhBDBDS" style="max-width: 200px; max-height: 150px; display: block; margin: 0 auto;"></a><br> 					<span style="color: blue; cursor: pointer;" onclick="alert('Chiama il numero: 34vvv xxxxxx');">Vuoi una guida?</span> 					</div>`)[0];
+                popup_35d7a460f08d23658e51c3648dddd17f.setContent(html_facfeef82ac84339826e74774ac9d4db);
+            
+        
+
+        circle_marker_8216626b80118468d993f4b3d34ee306.bindPopup(popup_35d7a460f08d23658e51c3648dddd17f)
+        ;
+
+        
+    
+    
+            var marker_60135e501d7fd6859d7607e0e1e63e12 = L.marker(
+                [45.85491, 9.35759],
+                {
+}
+            ).addTo(map_4d7af51ddd45ee5de1e2ae401c87ebab);
+        
+    
+            var div_icon_6e1e8d98a80d362cdef3c6dbf039f7e8 = L.divIcon({
+  "html": "\u003cdiv style=\u0027font-family: Arial; font-size: 12px; font-weight: bold; color: black;\u0027\u003e2\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_60135e501d7fd6859d7607e0e1e63e12.setIcon(div_icon_6e1e8d98a80d362cdef3c6dbf039f7e8);
+        
+    
+        var popup_ec75209acf73f4a64127c7c4810ac8f1 = L.popup({
+  "maxWidth": 650,
+});
+
+        
+            
+                var html_a2366434beaef21ab6f0fb819f5ad848 = $(`<div id="html_a2366434beaef21ab6f0fb819f5ad848" style="width: 100.0%; height: 100.0%;"> 					<b>sentiero delle vasche </b><br> 					<strong>Note del passaggio:</strong><br> 					prima svolta verso sentiero<br><br> 					<a href="https://drive.google.com/uc?id=1UN3ak6JlzZlk6rZBg1E53312wmhBDBDS" target="_blank"><img src="https://drive.google.com/uc?id=1UN3ak6JlzZlk6rZBg1E53312wmhBDBDS" style="max-width: 200px; max-height: 150px; display: block; margin: 0 auto;"></a><br> 					<span style="color: blue; cursor: pointer;" onclick="alert('Chiama il numero: 34vvv xxxxxx');">Vuoi una guida?</span> 					</div>`)[0];
+                popup_ec75209acf73f4a64127c7c4810ac8f1.setContent(html_a2366434beaef21ab6f0fb819f5ad848);
+            
+        
+
+        marker_60135e501d7fd6859d7607e0e1e63e12.bindPopup(popup_ec75209acf73f4a64127c7c4810ac8f1)
+        ;
+
+        
+    
+    
+                marker_60135e501d7fd6859d7607e0e1e63e12.setIcon(div_icon_6e1e8d98a80d362cdef3c6dbf039f7e8);
+            
+    
+            var circle_marker_48ea2987ff44290da996df573c06a395 = L.circleMarker(
+                [45.85674, 9.35789],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_4d7af51ddd45ee5de1e2ae401c87ebab);
+        
+    
+        var popup_8dd78bef8427af73200f58dc7797380b = L.popup({
+  "maxWidth": 650,
+});
+
+        
+            
+                var html_f5505bcf29b6a91a3a8d28623b333e26 = $(`<div id="html_f5505bcf29b6a91a3a8d28623b333e26" style="width: 100.0%; height: 100.0%;"> 					<b>sentiero delle vasche </b><br> 					<strong>Note del passaggio:</strong><br> 					vicinanze panchina gigante<br><br> 					<a href="https://drive.google.com/uc?id=1UN3ak6JlzZlk6rZBg1E53312wmhBDBDS" target="_blank"><img src="https://drive.google.com/uc?id=1UN3ak6JlzZlk6rZBg1E53312wmhBDBDS" style="max-width: 200px; max-height: 150px; display: block; margin: 0 auto;"></a><br> 					<span style="color: blue; cursor: pointer;" onclick="alert('Chiama il numero: 34vvv xxxxxx');">Vuoi una guida?</span> 					</div>`)[0];
+                popup_8dd78bef8427af73200f58dc7797380b.setContent(html_f5505bcf29b6a91a3a8d28623b333e26);
+            
+        
+
+        circle_marker_48ea2987ff44290da996df573c06a395.bindPopup(popup_8dd78bef8427af73200f58dc7797380b)
+        ;
+
+        
+    
+    
+            var marker_73f8effe841e3eecc68e33fa0fb27a82 = L.marker(
+                [45.85674, 9.35789],
+                {
+}
+            ).addTo(map_4d7af51ddd45ee5de1e2ae401c87ebab);
+        
+    
+            var div_icon_84a40b7d7ccd3ce46fddb7a64c8237f9 = L.divIcon({
+  "html": "\u003cdiv style=\u0027font-family: Arial; font-size: 12px; font-weight: bold; color: black;\u0027\u003e3\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_73f8effe841e3eecc68e33fa0fb27a82.setIcon(div_icon_84a40b7d7ccd3ce46fddb7a64c8237f9);
+        
+    
+        var popup_6dd946082a0649738e185d051c964469 = L.popup({
+  "maxWidth": 650,
+});
+
+        
+            
+                var html_7b9bd8e0eca30031ca0afa748d697fbf = $(`<div id="html_7b9bd8e0eca30031ca0afa748d697fbf" style="width: 100.0%; height: 100.0%;"> 					<b>sentiero delle vasche </b><br> 					<strong>Note del passaggio:</strong><br> 					vicinanze panchina gigante<br><br> 					<a href="https://drive.google.com/uc?id=1UN3ak6JlzZlk6rZBg1E53312wmhBDBDS" target="_blank"><img src="https://drive.google.com/uc?id=1UN3ak6JlzZlk6rZBg1E53312wmhBDBDS" style="max-width: 200px; max-height: 150px; display: block; margin: 0 auto;"></a><br> 					<span style="color: blue; cursor: pointer;" onclick="alert('Chiama il numero: 34vvv xxxxxx');">Vuoi una guida?</span> 					</div>`)[0];
+                popup_6dd946082a0649738e185d051c964469.setContent(html_7b9bd8e0eca30031ca0afa748d697fbf);
+            
+        
+
+        marker_73f8effe841e3eecc68e33fa0fb27a82.bindPopup(popup_6dd946082a0649738e185d051c964469)
+        ;
+
+        
+    
+    
+                marker_73f8effe841e3eecc68e33fa0fb27a82.setIcon(div_icon_84a40b7d7ccd3ce46fddb7a64c8237f9);
+            
+    
+            var circle_marker_fc446fcf946e39a4cf5068f1f6dc7137 = L.circleMarker(
+                [45.86396, 9.35977],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_4d7af51ddd45ee5de1e2ae401c87ebab);
+        
+    
+        var popup_6224db1e51bcf723f737c080bf9c2a8c = L.popup({
+  "maxWidth": 650,
+});
+
+        
+            
+                var html_c29a9538aa49492fb2344e53d9b2e7b6 = $(`<div id="html_c29a9538aa49492fb2344e53d9b2e7b6" style="width: 100.0%; height: 100.0%;"> 					<b>sentiero delle vasche </b><br> 					<strong>Note del passaggio:</strong><br> 					arrivo chiesetta e panorama<br><br> 					<a href="https://drive.google.com/uc?id=1UN3ak6JlzZlk6rZBg1E53312wmhBDBDS" target="_blank"><img src="https://drive.google.com/uc?id=1UN3ak6JlzZlk6rZBg1E53312wmhBDBDS" style="max-width: 200px; max-height: 150px; display: block; margin: 0 auto;"></a><br> 					<span style="color: blue; cursor: pointer;" onclick="alert('Chiama il numero: 34vvv xxxxxx');">Vuoi una guida?</span> 					</div>`)[0];
+                popup_6224db1e51bcf723f737c080bf9c2a8c.setContent(html_c29a9538aa49492fb2344e53d9b2e7b6);
+            
+        
+
+        circle_marker_fc446fcf946e39a4cf5068f1f6dc7137.bindPopup(popup_6224db1e51bcf723f737c080bf9c2a8c)
+        ;
+
+        
+    
+    
+            var marker_bdda67f0fca5e9b300e86a95891c55a9 = L.marker(
+                [45.86396, 9.35977],
+                {
+}
+            ).addTo(map_4d7af51ddd45ee5de1e2ae401c87ebab);
+        
+    
+            var div_icon_cb7bcebfcbba747cc6c2f0827f09b0b8 = L.divIcon({
+  "html": "\u003cdiv style=\u0027font-family: Arial; font-size: 12px; font-weight: bold; color: black;\u0027\u003e4\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_bdda67f0fca5e9b300e86a95891c55a9.setIcon(div_icon_cb7bcebfcbba747cc6c2f0827f09b0b8);
+        
+    
+        var popup_00240dc382eae15a654c223a8bd95941 = L.popup({
+  "maxWidth": 650,
+});
+
+        
+            
+                var html_c7faa12c9cd87f15f512191514e80baa = $(`<div id="html_c7faa12c9cd87f15f512191514e80baa" style="width: 100.0%; height: 100.0%;"> 					<b>sentiero delle vasche </b><br> 					<strong>Note del passaggio:</strong><br> 					arrivo chiesetta e panorama<br><br> 					<a href="https://drive.google.com/uc?id=1UN3ak6JlzZlk6rZBg1E53312wmhBDBDS" target="_blank"><img src="https://drive.google.com/uc?id=1UN3ak6JlzZlk6rZBg1E53312wmhBDBDS" style="max-width: 200px; max-height: 150px; display: block; margin: 0 auto;"></a><br> 					<span style="color: blue; cursor: pointer;" onclick="alert('Chiama il numero: 34vvv xxxxxx');">Vuoi una guida?</span> 					</div>`)[0];
+                popup_00240dc382eae15a654c223a8bd95941.setContent(html_c7faa12c9cd87f15f512191514e80baa);
+            
+        
+
+        marker_bdda67f0fca5e9b300e86a95891c55a9.bindPopup(popup_00240dc382eae15a654c223a8bd95941)
+        ;
+
+        
+    
+    
+                marker_bdda67f0fca5e9b300e86a95891c55a9.setIcon(div_icon_cb7bcebfcbba747cc6c2f0827f09b0b8);
+            
+    
+            var poly_line_7ed70792d5cff9818a7e61b0c467a750 = L.polyline(
+                [[45.85548, 9.35523], [45.85491, 9.35759], [45.85674, 9.35789], [45.86396, 9.35977]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_4d7af51ddd45ee5de1e2ae401c87ebab);
+        
+    
+            poly_line_7ed70792d5cff9818a7e61b0c467a750.bindTooltip(
+                `<div>
+                     sentiero delle vasche 
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_110d28ca599ec041e076c1cd3fd2dcd7 = L.circleMarker(
+                [45.84548, 9.35423],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_4d7af51ddd45ee5de1e2ae401c87ebab);
+        
+    
+        var popup_10731e0b9f8e6b9176d2a2a6ca9c4c1f = L.popup({
+  "maxWidth": 650,
+});
+
+        
+            
+                var html_da27d83152403eb783f705c33d5c603d = $(`<div id="html_da27d83152403eb783f705c33d5c603d" style="width: 100.0%; height: 100.0%;"> 					<b>sentiero del viandante</b><br> 					<strong>Note del passaggio:</strong><br> 					facile panoramico possibilità bagno. Partenza P.za Rosse Valmadrera<br><br> 					<a href="https://drive.google.com/uc?id=1UN3ak6JlzZlk6rZBg1E53312wmhBDBDS" target="_blank"><img src="https://drive.google.com/uc?id=1UN3ak6JlzZlk6rZBg1E53312wmhBDBDS" style="max-width: 200px; max-height: 150px; display: block; margin: 0 auto;"></a><br> 					<span style="color: blue; cursor: pointer;" onclick="alert('Chiama il numero: 34vvv xxxxxx');">Vuoi una guida?</span> 					</div>`)[0];
+                popup_10731e0b9f8e6b9176d2a2a6ca9c4c1f.setContent(html_da27d83152403eb783f705c33d5c603d);
+            
+        
+
+        circle_marker_110d28ca599ec041e076c1cd3fd2dcd7.bindPopup(popup_10731e0b9f8e6b9176d2a2a6ca9c4c1f)
+        ;
+
+        
+    
+    
+            var marker_b0f6d33f3ef39540e08b572da3fa3607 = L.marker(
+                [45.84548, 9.35423],
+                {
+}
+            ).addTo(map_4d7af51ddd45ee5de1e2ae401c87ebab);
+        
+    
+            var div_icon_c43e3c624fa883ee1dd176b72dc37d2d = L.divIcon({
+  "html": "\u003cdiv style=\u0027font-family: Arial; font-size: 12px; font-weight: bold; color: black;\u0027\u003e1\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_b0f6d33f3ef39540e08b572da3fa3607.setIcon(div_icon_c43e3c624fa883ee1dd176b72dc37d2d);
+        
+    
+        var popup_235038693e74f02143cafdedd3309ffd = L.popup({
+  "maxWidth": 650,
+});
+
+        
+            
+                var html_adedefff8037327a788760d1063cba07 = $(`<div id="html_adedefff8037327a788760d1063cba07" style="width: 100.0%; height: 100.0%;"> 					<b>sentiero del viandante</b><br> 					<strong>Note del passaggio:</strong><br> 					facile panoramico possibilità bagno. Partenza P.za Rosse Valmadrera<br><br> 					<a href="https://drive.google.com/uc?id=1UN3ak6JlzZlk6rZBg1E53312wmhBDBDS" target="_blank"><img src="https://drive.google.com/uc?id=1UN3ak6JlzZlk6rZBg1E53312wmhBDBDS" style="max-width: 200px; max-height: 150px; display: block; margin: 0 auto;"></a><br> 					<span style="color: blue; cursor: pointer;" onclick="alert('Chiama il numero: 34vvv xxxxxx');">Vuoi una guida?</span> 					</div>`)[0];
+                popup_235038693e74f02143cafdedd3309ffd.setContent(html_adedefff8037327a788760d1063cba07);
+            
+        
+
+        marker_b0f6d33f3ef39540e08b572da3fa3607.bindPopup(popup_235038693e74f02143cafdedd3309ffd)
+        ;
+
+        
+    
+    
+                marker_b0f6d33f3ef39540e08b572da3fa3607.setIcon(div_icon_c43e3c624fa883ee1dd176b72dc37d2d);
+            
+    
+            var circle_marker_f1ce2fdb3a0b04c2fac2b06f59f670a5 = L.circleMarker(
+                [45.86396, 9.35977],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_4d7af51ddd45ee5de1e2ae401c87ebab);
+        
+    
+        var popup_87edf0872d0289eb82c4543f1aac8912 = L.popup({
+  "maxWidth": 650,
+});
+
+        
+            
+                var html_7f3aad50acca32935609455e89670ecd = $(`<div id="html_7f3aad50acca32935609455e89670ecd" style="width: 100.0%; height: 100.0%;"> 					<b>sentiero del viandante</b><br> 					<strong>Note del passaggio:</strong><br> 					prima svolta verso sentiero<br><br> 					<a href="https://drive.google.com/uc?id=1UN3ak6JlzZlk6rZBg1E53312wmhBDBDS" target="_blank"><img src="https://drive.google.com/uc?id=1UN3ak6JlzZlk6rZBg1E53312wmhBDBDS" style="max-width: 200px; max-height: 150px; display: block; margin: 0 auto;"></a><br> 					<span style="color: blue; cursor: pointer;" onclick="alert('Chiama il numero: 34vvv xxxxxx');">Vuoi una guida?</span> 					</div>`)[0];
+                popup_87edf0872d0289eb82c4543f1aac8912.setContent(html_7f3aad50acca32935609455e89670ecd);
+            
+        
+
+        circle_marker_f1ce2fdb3a0b04c2fac2b06f59f670a5.bindPopup(popup_87edf0872d0289eb82c4543f1aac8912)
+        ;
+
+        
+    
+    
+            var marker_1a86486bbf4882a140b61220d9ab2c0f = L.marker(
+                [45.86396, 9.35977],
+                {
+}
+            ).addTo(map_4d7af51ddd45ee5de1e2ae401c87ebab);
+        
+    
+            var div_icon_6dc246b6db1eae7c9ea930fcea2b4948 = L.divIcon({
+  "html": "\u003cdiv style=\u0027font-family: Arial; font-size: 12px; font-weight: bold; color: black;\u0027\u003e2\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_1a86486bbf4882a140b61220d9ab2c0f.setIcon(div_icon_6dc246b6db1eae7c9ea930fcea2b4948);
+        
+    
+        var popup_e4f4be767d4cd6afae6b30969df92e4a = L.popup({
+  "maxWidth": 650,
+});
+
+        
+            
+                var html_d317938782a3d390494c78cb283bd442 = $(`<div id="html_d317938782a3d390494c78cb283bd442" style="width: 100.0%; height: 100.0%;"> 					<b>sentiero del viandante</b><br> 					<strong>Note del passaggio:</strong><br> 					prima svolta verso sentiero<br><br> 					<a href="https://drive.google.com/uc?id=1UN3ak6JlzZlk6rZBg1E53312wmhBDBDS" target="_blank"><img src="https://drive.google.com/uc?id=1UN3ak6JlzZlk6rZBg1E53312wmhBDBDS" style="max-width: 200px; max-height: 150px; display: block; margin: 0 auto;"></a><br> 					<span style="color: blue; cursor: pointer;" onclick="alert('Chiama il numero: 34vvv xxxxxx');">Vuoi una guida?</span> 					</div>`)[0];
+                popup_e4f4be767d4cd6afae6b30969df92e4a.setContent(html_d317938782a3d390494c78cb283bd442);
+            
+        
+
+        marker_1a86486bbf4882a140b61220d9ab2c0f.bindPopup(popup_e4f4be767d4cd6afae6b30969df92e4a)
+        ;
+
+        
+    
+    
+                marker_1a86486bbf4882a140b61220d9ab2c0f.setIcon(div_icon_6dc246b6db1eae7c9ea930fcea2b4948);
+            
+    
+            var poly_line_c4c6ca4ed8752e9449a5c167a136eff6 = L.polyline(
+                [[45.84548, 9.35423], [45.86396, 9.35977]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_4d7af51ddd45ee5de1e2ae401c87ebab);
+        
+    
+            poly_line_c4c6ca4ed8752e9449a5c167a136eff6.bindTooltip(
+                `<div>
+                     sentiero del viandante
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_ebcd71a5fda4121e7d9802e7285d331b = L.marker(
+                [45.8646, 9.45],
+                {
+}
+            ).addTo(map_4d7af51ddd45ee5de1e2ae401c87ebab);
+        
+    
+            var icon_d2823652b3da97a4ed2c134fa9b33991 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e4700410b5269db9401da35964158df4 = L.popup({
+  "maxWidth": 650,
+});
+
+        
+            
+                var html_f0ca3696b47b9419a4dc46c02dc9c399 = $(`<div id="html_f0ca3696b47b9419a4dc46c02dc9c399" style="width: 100.0%; height: 100.0%;"><b>RESEGONE</b><br>nan</b><br>ferrata difficile</div>`)[0];
+                popup_e4700410b5269db9401da35964158df4.setContent(html_f0ca3696b47b9419a4dc46c02dc9c399);
+            
+        
+
+        marker_ebcd71a5fda4121e7d9802e7285d331b.bindPopup(popup_e4700410b5269db9401da35964158df4)
+        ;
+
+        
+    
+    
+                marker_ebcd71a5fda4121e7d9802e7285d331b.setIcon(icon_d2823652b3da97a4ed2c134fa9b33991);
+            
+    
+            var circle_marker_acdffe4730463eb85ec3df550a84f47d = L.circleMarker(
+                [45.865, 9.46],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_4d7af51ddd45ee5de1e2ae401c87ebab);
+        
+    
+        var popup_10f15f398236a3af7c7be3bdb93d3abd = L.popup({
+  "maxWidth": 650,
+});
+
+        
+            
+                var html_38386e3569ad45ec2a0cd0722f726d7f = $(`<div id="html_38386e3569ad45ec2a0cd0722f726d7f" style="width: 100.0%; height: 100.0%;"> 					<b>FERRATA</b><br> 					<strong>Note del passaggio:</strong><br> 					ferrata difficile<br><br> 					<a href="https://drive.google.com/uc?id=1S_DLybL8etlI0IbF0e0VdHYAOAhrKZYC" target="_blank"><img src="https://drive.google.com/uc?id=1S_DLybL8etlI0IbF0e0VdHYAOAhrKZYC" style="max-width: 200px; max-height: 150px; display: block; margin: 0 auto;"></a><br> 					<span style="color: blue; cursor: pointer;" onclick="alert('Chiama il numero: 4875283');">Vuoi una guida?</span> 					</div>`)[0];
+                popup_10f15f398236a3af7c7be3bdb93d3abd.setContent(html_38386e3569ad45ec2a0cd0722f726d7f);
+            
+        
+
+        circle_marker_acdffe4730463eb85ec3df550a84f47d.bindPopup(popup_10f15f398236a3af7c7be3bdb93d3abd)
+        ;
+
+        
+    
+    
+            var marker_bc2df62eb7ca36a89672cdf28f317f60 = L.marker(
+                [45.865, 9.46],
+                {
+}
+            ).addTo(map_4d7af51ddd45ee5de1e2ae401c87ebab);
+        
+    
+            var div_icon_7ae57dd2c0cac6b468a07399ddae420e = L.divIcon({
+  "html": "\u003cdiv style=\u0027font-family: Arial; font-size: 12px; font-weight: bold; color: black;\u0027\u003e1\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_bc2df62eb7ca36a89672cdf28f317f60.setIcon(div_icon_7ae57dd2c0cac6b468a07399ddae420e);
+        
+    
+        var popup_9143c08d23122c7aae3d2e02cfabb295 = L.popup({
+  "maxWidth": 650,
+});
+
+        
+            
+                var html_be63436c59062f6b623dfe51d58aab6b = $(`<div id="html_be63436c59062f6b623dfe51d58aab6b" style="width: 100.0%; height: 100.0%;"> 					<b>FERRATA</b><br> 					<strong>Note del passaggio:</strong><br> 					ferrata difficile<br><br> 					<a href="https://drive.google.com/uc?id=1S_DLybL8etlI0IbF0e0VdHYAOAhrKZYC" target="_blank"><img src="https://drive.google.com/uc?id=1S_DLybL8etlI0IbF0e0VdHYAOAhrKZYC" style="max-width: 200px; max-height: 150px; display: block; margin: 0 auto;"></a><br> 					<span style="color: blue; cursor: pointer;" onclick="alert('Chiama il numero: 4875283');">Vuoi una guida?</span> 					</div>`)[0];
+                popup_9143c08d23122c7aae3d2e02cfabb295.setContent(html_be63436c59062f6b623dfe51d58aab6b);
+            
+        
+
+        marker_bc2df62eb7ca36a89672cdf28f317f60.bindPopup(popup_9143c08d23122c7aae3d2e02cfabb295)
+        ;
+
+        
+    
+    
+                marker_bc2df62eb7ca36a89672cdf28f317f60.setIcon(div_icon_7ae57dd2c0cac6b468a07399ddae420e);
+            
+    
+            var circle_marker_c1e6926d414d1d1ea57ac2d27de02134 = L.circleMarker(
+                [45.8646, 9.45],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_4d7af51ddd45ee5de1e2ae401c87ebab);
+        
+    
+        var popup_e61f66f96eeb14f29229f7054a8c7b8a = L.popup({
+  "maxWidth": 650,
+});
+
+        
+            
+                var html_75fdd525648a2ea458329b531243ba98 = $(`<div id="html_75fdd525648a2ea458329b531243ba98" style="width: 100.0%; height: 100.0%;"> 					<b>FERRATA</b><br> 					<strong>Note del passaggio:</strong><br> 					ferrata difficile<br><br> 					<a href="https://drive.google.com/uc?id=1S_DLybL8etlI0IbF0e0VdHYAOAhrKZYC" target="_blank"><img src="https://drive.google.com/uc?id=1S_DLybL8etlI0IbF0e0VdHYAOAhrKZYC" style="max-width: 200px; max-height: 150px; display: block; margin: 0 auto;"></a><br> 					<span style="color: blue; cursor: pointer;" onclick="alert('Chiama il numero: 4875283');">Vuoi una guida?</span> 					</div>`)[0];
+                popup_e61f66f96eeb14f29229f7054a8c7b8a.setContent(html_75fdd525648a2ea458329b531243ba98);
+            
+        
+
+        circle_marker_c1e6926d414d1d1ea57ac2d27de02134.bindPopup(popup_e61f66f96eeb14f29229f7054a8c7b8a)
+        ;
+
+        
+    
+    
+            var marker_d35d4c68087a3e362c74b8fb719579ce = L.marker(
+                [45.8646, 9.45],
+                {
+}
+            ).addTo(map_4d7af51ddd45ee5de1e2ae401c87ebab);
+        
+    
+            var div_icon_a9301969e1b2ff9188cf893db4280089 = L.divIcon({
+  "html": "\u003cdiv style=\u0027font-family: Arial; font-size: 12px; font-weight: bold; color: black;\u0027\u003e2\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_d35d4c68087a3e362c74b8fb719579ce.setIcon(div_icon_a9301969e1b2ff9188cf893db4280089);
+        
+    
+        var popup_f2c2a2e0392ebb17173d40d0b12a9f41 = L.popup({
+  "maxWidth": 650,
+});
+
+        
+            
+                var html_b987f793a81080adffbcdec858e31e88 = $(`<div id="html_b987f793a81080adffbcdec858e31e88" style="width: 100.0%; height: 100.0%;"> 					<b>FERRATA</b><br> 					<strong>Note del passaggio:</strong><br> 					ferrata difficile<br><br> 					<a href="https://drive.google.com/uc?id=1S_DLybL8etlI0IbF0e0VdHYAOAhrKZYC" target="_blank"><img src="https://drive.google.com/uc?id=1S_DLybL8etlI0IbF0e0VdHYAOAhrKZYC" style="max-width: 200px; max-height: 150px; display: block; margin: 0 auto;"></a><br> 					<span style="color: blue; cursor: pointer;" onclick="alert('Chiama il numero: 4875283');">Vuoi una guida?</span> 					</div>`)[0];
+                popup_f2c2a2e0392ebb17173d40d0b12a9f41.setContent(html_b987f793a81080adffbcdec858e31e88);
+            
+        
+
+        marker_d35d4c68087a3e362c74b8fb719579ce.bindPopup(popup_f2c2a2e0392ebb17173d40d0b12a9f41)
+        ;
+
+        
+    
+    
+                marker_d35d4c68087a3e362c74b8fb719579ce.setIcon(div_icon_a9301969e1b2ff9188cf893db4280089);
+            
+    
+            var poly_line_c145159f7b5fd293f7de6201428efc43 = L.polyline(
+                [[45.865, 9.46], [45.8646, 9.45]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_4d7af51ddd45ee5de1e2ae401c87ebab);
+        
+    
+            poly_line_c145159f7b5fd293f7de6201428efc43.bindTooltip(
+                `<div>
+                     FERRATA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3afa8db17396b4bd2219377b90b60c5e = L.circleMarker(
+                [45.866, 9.47],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_4d7af51ddd45ee5de1e2ae401c87ebab);
+        
+    
+        var popup_fb6136fd1316a0f45c4048f2ae859194 = L.popup({
+  "maxWidth": 650,
+});
+
+        
+            
+                var html_a8dadc5d5444ec14e204c75b5b8fc43e = $(`<div id="html_a8dadc5d5444ec14e204c75b5b8fc43e" style="width: 100.0%; height: 100.0%;"> 					<b>percorso delle Casote</b><br> 					<strong>Note del passaggio:</strong><br> 					bel percorso<br><br> 					<a href="https://drive.google.com/uc?id=1S_DLybL8etlI0IbF0e0VdHYAOAhrKZYC" target="_blank"><img src="https://drive.google.com/uc?id=1S_DLybL8etlI0IbF0e0VdHYAOAhrKZYC" style="max-width: 200px; max-height: 150px; display: block; margin: 0 auto;"></a><br> 					<span style="color: blue; cursor: pointer;" onclick="alert('Chiama il numero: 4875283');">Vuoi una guida?</span> 					</div>`)[0];
+                popup_fb6136fd1316a0f45c4048f2ae859194.setContent(html_a8dadc5d5444ec14e204c75b5b8fc43e);
+            
+        
+
+        circle_marker_3afa8db17396b4bd2219377b90b60c5e.bindPopup(popup_fb6136fd1316a0f45c4048f2ae859194)
+        ;
+
+        
+    
+    
+            var marker_b52357eda07c70d53c060cc843d11252 = L.marker(
+                [45.866, 9.47],
+                {
+}
+            ).addTo(map_4d7af51ddd45ee5de1e2ae401c87ebab);
+        
+    
+            var div_icon_6c470ecc49a28f569e3af8604959b3b7 = L.divIcon({
+  "html": "\u003cdiv style=\u0027font-family: Arial; font-size: 12px; font-weight: bold; color: black;\u0027\u003e1\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_b52357eda07c70d53c060cc843d11252.setIcon(div_icon_6c470ecc49a28f569e3af8604959b3b7);
+        
+    
+        var popup_1aaba50debb9430d4d920ea5079636f9 = L.popup({
+  "maxWidth": 650,
+});
+
+        
+            
+                var html_54f17fab3e27714b7a409d0914e1ae23 = $(`<div id="html_54f17fab3e27714b7a409d0914e1ae23" style="width: 100.0%; height: 100.0%;"> 					<b>percorso delle Casote</b><br> 					<strong>Note del passaggio:</strong><br> 					bel percorso<br><br> 					<a href="https://drive.google.com/uc?id=1S_DLybL8etlI0IbF0e0VdHYAOAhrKZYC" target="_blank"><img src="https://drive.google.com/uc?id=1S_DLybL8etlI0IbF0e0VdHYAOAhrKZYC" style="max-width: 200px; max-height: 150px; display: block; margin: 0 auto;"></a><br> 					<span style="color: blue; cursor: pointer;" onclick="alert('Chiama il numero: 4875283');">Vuoi una guida?</span> 					</div>`)[0];
+                popup_1aaba50debb9430d4d920ea5079636f9.setContent(html_54f17fab3e27714b7a409d0914e1ae23);
+            
+        
+
+        marker_b52357eda07c70d53c060cc843d11252.bindPopup(popup_1aaba50debb9430d4d920ea5079636f9)
+        ;
+
+        
+    
+    
+                marker_b52357eda07c70d53c060cc843d11252.setIcon(div_icon_6c470ecc49a28f569e3af8604959b3b7);
+            
+    
+            var circle_marker_96d143ac3369ce160b705215f157579c = L.circleMarker(
+                [45.8646, 9.45],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_4d7af51ddd45ee5de1e2ae401c87ebab);
+        
+    
+        var popup_43b233a0aa5d4c04d2aa0f38fd0e2f99 = L.popup({
+  "maxWidth": 650,
+});
+
+        
+            
+                var html_5b694710845b9a0bc8a6fdf978ed6a6a = $(`<div id="html_5b694710845b9a0bc8a6fdf978ed6a6a" style="width: 100.0%; height: 100.0%;"> 					<b>percorso delle Casote</b><br> 					<strong>Note del passaggio:</strong><br> 					ottimo panorama<br><br> 					<a href="https://drive.google.com/uc?id=1S_DLybL8etlI0IbF0e0VdHYAOAhrKZYC" target="_blank"><img src="https://drive.google.com/uc?id=1S_DLybL8etlI0IbF0e0VdHYAOAhrKZYC" style="max-width: 200px; max-height: 150px; display: block; margin: 0 auto;"></a><br> 					<span style="color: blue; cursor: pointer;" onclick="alert('Chiama il numero: 4875283');">Vuoi una guida?</span> 					</div>`)[0];
+                popup_43b233a0aa5d4c04d2aa0f38fd0e2f99.setContent(html_5b694710845b9a0bc8a6fdf978ed6a6a);
+            
+        
+
+        circle_marker_96d143ac3369ce160b705215f157579c.bindPopup(popup_43b233a0aa5d4c04d2aa0f38fd0e2f99)
+        ;
+
+        
+    
+    
+            var marker_d9976a3d7cbb9f3a3e9e8a09d451a1f6 = L.marker(
+                [45.8646, 9.45],
+                {
+}
+            ).addTo(map_4d7af51ddd45ee5de1e2ae401c87ebab);
+        
+    
+            var div_icon_dfc861813fa59ca4d0adedd3699193e0 = L.divIcon({
+  "html": "\u003cdiv style=\u0027font-family: Arial; font-size: 12px; font-weight: bold; color: black;\u0027\u003e2\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_d9976a3d7cbb9f3a3e9e8a09d451a1f6.setIcon(div_icon_dfc861813fa59ca4d0adedd3699193e0);
+        
+    
+        var popup_95d5636a9434e0760cd0b0e8d604f95c = L.popup({
+  "maxWidth": 650,
+});
+
+        
+            
+                var html_6be60b10fad8306e55c3e146360add83 = $(`<div id="html_6be60b10fad8306e55c3e146360add83" style="width: 100.0%; height: 100.0%;"> 					<b>percorso delle Casote</b><br> 					<strong>Note del passaggio:</strong><br> 					ottimo panorama<br><br> 					<a href="https://drive.google.com/uc?id=1S_DLybL8etlI0IbF0e0VdHYAOAhrKZYC" target="_blank"><img src="https://drive.google.com/uc?id=1S_DLybL8etlI0IbF0e0VdHYAOAhrKZYC" style="max-width: 200px; max-height: 150px; display: block; margin: 0 auto;"></a><br> 					<span style="color: blue; cursor: pointer;" onclick="alert('Chiama il numero: 4875283');">Vuoi una guida?</span> 					</div>`)[0];
+                popup_95d5636a9434e0760cd0b0e8d604f95c.setContent(html_6be60b10fad8306e55c3e146360add83);
+            
+        
+
+        marker_d9976a3d7cbb9f3a3e9e8a09d451a1f6.bindPopup(popup_95d5636a9434e0760cd0b0e8d604f95c)
+        ;
+
+        
+    
+    
+                marker_d9976a3d7cbb9f3a3e9e8a09d451a1f6.setIcon(div_icon_dfc861813fa59ca4d0adedd3699193e0);
+            
+    
+            var poly_line_3df9762622890b7b00c68f866a73509f = L.polyline(
+                [[45.866, 9.47], [45.8646, 9.45]],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "gray", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_4d7af51ddd45ee5de1e2ae401c87ebab);
+        
+    
+            poly_line_3df9762622890b7b00c68f866a73509f.bindTooltip(
+                `<div>
+                     percorso delle Casote
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_b7033c87cd271b39d5cb752c49cc1f04 = L.marker(
+                [45.83283, 9.37916],
+                {
+}
+            ).addTo(map_4d7af51ddd45ee5de1e2ae401c87ebab);
+        
+    
+            var icon_7e7f2362503ede2e32cacb22fbb429e5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4e03ca42744cad5e333bd3367a366353 = L.popup({
+  "maxWidth": 650,
+});
+
+        
+            
+                var html_1e7a42ed83fbf020a28f408ef01119bb = $(`<div id="html_1e7a42ed83fbf020a28f408ef01119bb" style="width: 100.0%; height: 100.0%;"><b>Monte Barro</b><br>eremo del monte Barro - museo archeologico - museo etnografico </b><br>partenza Galbiate via dell'Oliva</div>`)[0];
+                popup_4e03ca42744cad5e333bd3367a366353.setContent(html_1e7a42ed83fbf020a28f408ef01119bb);
+            
+        
+
+        marker_b7033c87cd271b39d5cb752c49cc1f04.bindPopup(popup_4e03ca42744cad5e333bd3367a366353)
+        ;
+
+        
+    
+    
+                marker_b7033c87cd271b39d5cb752c49cc1f04.setIcon(icon_7e7f2362503ede2e32cacb22fbb429e5);
+            
+    
+            var circle_marker_bb69ead3b0461ed55cd1e96affcb0200 = L.circleMarker(
+                [45.82145, 9.38294],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_4d7af51ddd45ee5de1e2ae401c87ebab);
+        
+    
+        var popup_e5ae0604af78b1e831bc6721c6fc2637 = L.popup({
+  "maxWidth": 650,
+});
+
+        
+            
+                var html_514e84b88392d25e138e8d33aad948fd = $(`<div id="html_514e84b88392d25e138e8d33aad948fd" style="width: 100.0%; height: 100.0%;"> 					<b>sentiero monte Barro</b><br> 					<strong>Note del passaggio:</strong><br> 					partenza Galbiate via dell'Oliva<br><br> 					<a href="https://drive.google.com/uc?id=1S_DLybL8etlI0IbF0e0VdHYAOAhrKZYC" target="_blank"><img src="https://drive.google.com/uc?id=1S_DLybL8etlI0IbF0e0VdHYAOAhrKZYC" style="max-width: 200px; max-height: 150px; display: block; margin: 0 auto;"></a><br> 					<span style="color: blue; cursor: pointer;" onclick="alert('Chiama il numero: giullia xxxxx');">Vuoi una guida?</span> 					</div>`)[0];
+                popup_e5ae0604af78b1e831bc6721c6fc2637.setContent(html_514e84b88392d25e138e8d33aad948fd);
+            
+        
+
+        circle_marker_bb69ead3b0461ed55cd1e96affcb0200.bindPopup(popup_e5ae0604af78b1e831bc6721c6fc2637)
+        ;
+
+        
+    
+    
+            var marker_82e3367ef36dbeed4c9fb17156190f1f = L.marker(
+                [45.82145, 9.38294],
+                {
+}
+            ).addTo(map_4d7af51ddd45ee5de1e2ae401c87ebab);
+        
+    
+            var div_icon_73fcf0d145e1a09534ebf85ca9e9fc56 = L.divIcon({
+  "html": "\u003cdiv style=\u0027font-family: Arial; font-size: 12px; font-weight: bold; color: black;\u0027\u003e1\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_82e3367ef36dbeed4c9fb17156190f1f.setIcon(div_icon_73fcf0d145e1a09534ebf85ca9e9fc56);
+        
+    
+        var popup_c8020efd7e0b5a672a9b0f7de0f36304 = L.popup({
+  "maxWidth": 650,
+});
+
+        
+            
+                var html_5c84d3def193adb697eeb1bc46960297 = $(`<div id="html_5c84d3def193adb697eeb1bc46960297" style="width: 100.0%; height: 100.0%;"> 					<b>sentiero monte Barro</b><br> 					<strong>Note del passaggio:</strong><br> 					partenza Galbiate via dell'Oliva<br><br> 					<a href="https://drive.google.com/uc?id=1S_DLybL8etlI0IbF0e0VdHYAOAhrKZYC" target="_blank"><img src="https://drive.google.com/uc?id=1S_DLybL8etlI0IbF0e0VdHYAOAhrKZYC" style="max-width: 200px; max-height: 150px; display: block; margin: 0 auto;"></a><br> 					<span style="color: blue; cursor: pointer;" onclick="alert('Chiama il numero: giullia xxxxx');">Vuoi una guida?</span> 					</div>`)[0];
+                popup_c8020efd7e0b5a672a9b0f7de0f36304.setContent(html_5c84d3def193adb697eeb1bc46960297);
+            
+        
+
+        marker_82e3367ef36dbeed4c9fb17156190f1f.bindPopup(popup_c8020efd7e0b5a672a9b0f7de0f36304)
+        ;
+
+        
+    
+    
+                marker_82e3367ef36dbeed4c9fb17156190f1f.setIcon(div_icon_73fcf0d145e1a09534ebf85ca9e9fc56);
+            
+    
+            var circle_marker_f652d3b9b2dd8a5ae51a42f440271cd6 = L.circleMarker(
+                [45.81855, 9.37884],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_4d7af51ddd45ee5de1e2ae401c87ebab);
+        
+    
+        var popup_0765723e0364b3a45f97c9177deeb96a = L.popup({
+  "maxWidth": 650,
+});
+
+        
+            
+                var html_839739970db95209799c12708cf2588c = $(`<div id="html_839739970db95209799c12708cf2588c" style="width: 100.0%; height: 100.0%;"> 					<b>sentiero monte Barro</b><br> 					<strong>Note del passaggio:</strong><br> 					via s.alessandro 13 <br><br> 					<a href="https://drive.google.com/uc?id=1S_DLybL8etlI0IbF0e0VdHYAOAhrKZYC" target="_blank"><img src="https://drive.google.com/uc?id=1S_DLybL8etlI0IbF0e0VdHYAOAhrKZYC" style="max-width: 200px; max-height: 150px; display: block; margin: 0 auto;"></a><br> 					<span style="color: blue; cursor: pointer;" onclick="alert('Chiama il numero: giullia xxxxx');">Vuoi una guida?</span> 					</div>`)[0];
+                popup_0765723e0364b3a45f97c9177deeb96a.setContent(html_839739970db95209799c12708cf2588c);
+            
+        
+
+        circle_marker_f652d3b9b2dd8a5ae51a42f440271cd6.bindPopup(popup_0765723e0364b3a45f97c9177deeb96a)
+        ;
+
+        
+    
+    
+            var marker_52cb1d2d11b1df807e941396a9497305 = L.marker(
+                [45.81855, 9.37884],
+                {
+}
+            ).addTo(map_4d7af51ddd45ee5de1e2ae401c87ebab);
+        
+    
+            var div_icon_2c10df1f81b3c93c8cb17451adad4e42 = L.divIcon({
+  "html": "\u003cdiv style=\u0027font-family: Arial; font-size: 12px; font-weight: bold; color: black;\u0027\u003e2\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_52cb1d2d11b1df807e941396a9497305.setIcon(div_icon_2c10df1f81b3c93c8cb17451adad4e42);
+        
+    
+        var popup_1e225b7393ac3e8473fa1e91cd07c625 = L.popup({
+  "maxWidth": 650,
+});
+
+        
+            
+                var html_bc684fad543e07a457bda07a9d28a556 = $(`<div id="html_bc684fad543e07a457bda07a9d28a556" style="width: 100.0%; height: 100.0%;"> 					<b>sentiero monte Barro</b><br> 					<strong>Note del passaggio:</strong><br> 					via s.alessandro 13 <br><br> 					<a href="https://drive.google.com/uc?id=1S_DLybL8etlI0IbF0e0VdHYAOAhrKZYC" target="_blank"><img src="https://drive.google.com/uc?id=1S_DLybL8etlI0IbF0e0VdHYAOAhrKZYC" style="max-width: 200px; max-height: 150px; display: block; margin: 0 auto;"></a><br> 					<span style="color: blue; cursor: pointer;" onclick="alert('Chiama il numero: giullia xxxxx');">Vuoi una guida?</span> 					</div>`)[0];
+                popup_1e225b7393ac3e8473fa1e91cd07c625.setContent(html_bc684fad543e07a457bda07a9d28a556);
+            
+        
+
+        marker_52cb1d2d11b1df807e941396a9497305.bindPopup(popup_1e225b7393ac3e8473fa1e91cd07c625)
+        ;
+
+        
+    
+    
+                marker_52cb1d2d11b1df807e941396a9497305.setIcon(div_icon_2c10df1f81b3c93c8cb17451adad4e42);
+            
+    
+            var circle_marker_0f63949e50d305ad2edb1810895a903b = L.circleMarker(
+                [45.81766, 9.37375],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_4d7af51ddd45ee5de1e2ae401c87ebab);
+        
+    
+        var popup_e503c7cea1292ad0ca1da764b9a9ea5e = L.popup({
+  "maxWidth": 650,
+});
+
+        
+            
+                var html_5adc687a98a3b659844ede7e701f06c4 = $(`<div id="html_5adc687a98a3b659844ede7e701f06c4" style="width: 100.0%; height: 100.0%;"> 					<b>sentiero monte Barro</b><br> 					<strong>Note del passaggio:</strong><br> 					via c.Cavour galbiate<br><br> 					<a href="https://drive.google.com/uc?id=1S_DLybL8etlI0IbF0e0VdHYAOAhrKZYC" target="_blank"><img src="https://drive.google.com/uc?id=1S_DLybL8etlI0IbF0e0VdHYAOAhrKZYC" style="max-width: 200px; max-height: 150px; display: block; margin: 0 auto;"></a><br> 					<span style="color: blue; cursor: pointer;" onclick="alert('Chiama il numero: giullia xxxxx');">Vuoi una guida?</span> 					</div>`)[0];
+                popup_e503c7cea1292ad0ca1da764b9a9ea5e.setContent(html_5adc687a98a3b659844ede7e701f06c4);
+            
+        
+
+        circle_marker_0f63949e50d305ad2edb1810895a903b.bindPopup(popup_e503c7cea1292ad0ca1da764b9a9ea5e)
+        ;
+
+        
+    
+    
+            var marker_d10d95947b7977bc20b5a856b6ddf41c = L.marker(
+                [45.81766, 9.37375],
+                {
+}
+            ).addTo(map_4d7af51ddd45ee5de1e2ae401c87ebab);
+        
+    
+            var div_icon_85e33aee09009f804ef558a7848ec48f = L.divIcon({
+  "html": "\u003cdiv style=\u0027font-family: Arial; font-size: 12px; font-weight: bold; color: black;\u0027\u003e3\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_d10d95947b7977bc20b5a856b6ddf41c.setIcon(div_icon_85e33aee09009f804ef558a7848ec48f);
+        
+    
+        var popup_95c9bf6a6d48ed06483b2e8d6604b9de = L.popup({
+  "maxWidth": 650,
+});
+
+        
+            
+                var html_38ce6d25135430725297b9748efdd2f0 = $(`<div id="html_38ce6d25135430725297b9748efdd2f0" style="width: 100.0%; height: 100.0%;"> 					<b>sentiero monte Barro</b><br> 					<strong>Note del passaggio:</strong><br> 					via c.Cavour galbiate<br><br> 					<a href="https://drive.google.com/uc?id=1S_DLybL8etlI0IbF0e0VdHYAOAhrKZYC" target="_blank"><img src="https://drive.google.com/uc?id=1S_DLybL8etlI0IbF0e0VdHYAOAhrKZYC" style="max-width: 200px; max-height: 150px; display: block; margin: 0 auto;"></a><br> 					<span style="color: blue; cursor: pointer;" onclick="alert('Chiama il numero: giullia xxxxx');">Vuoi una guida?</span> 					</div>`)[0];
+                popup_95c9bf6a6d48ed06483b2e8d6604b9de.setContent(html_38ce6d25135430725297b9748efdd2f0);
+            
+        
+
+        marker_d10d95947b7977bc20b5a856b6ddf41c.bindPopup(popup_95c9bf6a6d48ed06483b2e8d6604b9de)
+        ;
+
+        
+    
+    
+                marker_d10d95947b7977bc20b5a856b6ddf41c.setIcon(div_icon_85e33aee09009f804ef558a7848ec48f);
+            
+    
+            var circle_marker_793b7abe8a71845e410869e4f32347a9 = L.circleMarker(
+                [45.83283, 9.37916],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_4d7af51ddd45ee5de1e2ae401c87ebab);
+        
+    
+        var popup_09ad08a83262a665667777982646b5f0 = L.popup({
+  "maxWidth": 650,
+});
+
+        
+            
+                var html_034c9aad39f0efdaeb46f4d0d09eb22c = $(`<div id="html_034c9aad39f0efdaeb46f4d0d09eb22c" style="width: 100.0%; height: 100.0%;"> 					<b>sentiero monte Barro</b><br> 					<strong>Note del passaggio:</strong><br> 					Vista panoramica lago <br><br> 					<a href="https://drive.google.com/uc?id=1S_DLybL8etlI0IbF0e0VdHYAOAhrKZYC" target="_blank"><img src="https://drive.google.com/uc?id=1S_DLybL8etlI0IbF0e0VdHYAOAhrKZYC" style="max-width: 200px; max-height: 150px; display: block; margin: 0 auto;"></a><br> 					<span style="color: blue; cursor: pointer;" onclick="alert('Chiama il numero: giullia xxxxx');">Vuoi una guida?</span> 					</div>`)[0];
+                popup_09ad08a83262a665667777982646b5f0.setContent(html_034c9aad39f0efdaeb46f4d0d09eb22c);
+            
+        
+
+        circle_marker_793b7abe8a71845e410869e4f32347a9.bindPopup(popup_09ad08a83262a665667777982646b5f0)
+        ;
+
+        
+    
+    
+            var marker_01efad9a8336acf3651472875381b20a = L.marker(
+                [45.83283, 9.37916],
+                {
+}
+            ).addTo(map_4d7af51ddd45ee5de1e2ae401c87ebab);
+        
+    
+            var div_icon_51fe1efdd5b90ea4ce603b230c0cb8f1 = L.divIcon({
+  "html": "\u003cdiv style=\u0027font-family: Arial; font-size: 12px; font-weight: bold; color: black;\u0027\u003e4\u003c/div\u003e",
+  "className": "empty",
+});
+            marker_01efad9a8336acf3651472875381b20a.setIcon(div_icon_51fe1efdd5b90ea4ce603b230c0cb8f1);
+        
+    
+        var popup_8dc06b3cda8e11b9ecfe416ee0affbeb = L.popup({
+  "maxWidth": 650,
+});
+
+        
+            
+                var html_5edef9d5d9afa318295c3d4eb11f7b1b = $(`<div id="html_5edef9d5d9afa318295c3d4eb11f7b1b" style="width: 100.0%; height: 100.0%;"> 					<b>sentiero monte Barro</b><br> 					<strong>Note del passaggio:</strong><br> 					Vista panoramica lago <br><br> 					<a href="https://drive.google.com/uc?id=1S_DLybL8etlI0IbF0e0VdHYAOAhrKZYC" target="_blank"><img src="https://drive.google.com/uc?id=1S_DLybL8etlI0IbF0e0VdHYAOAhrKZYC" style="max-width: 200px; max-height: 150px; display: block; margin: 0 auto;"></a><br> 					<span style="color: blue; cursor: pointer;" onclick="alert('Chiama il numero: giullia xxxxx');">Vuoi una guida?</span> 					</div>`)[0];
+                popup_8dc06b3cda8e11b9ecfe416ee0affbeb.setContent(html_5edef9d5d9afa318295c3d4eb11f7b1b);
+            
+        
+
+        marker_01efad9a8336acf3651472875381b20a.bindPopup(popup_8dc06b3cda8e11b9ecfe416ee0affbeb)
+        ;
+
+        
+    
+    
+                marker_01efad9a8336acf3651472875381b20a.setIcon(div_icon_51fe1efdd5b90ea4ce603b230c0cb8f1);
+            
+    
+            var poly_line_8f5500549478c37f3286ddc0331d407b = L.polyline(
+                [[45.82145, 9.38294], [45.81855, 9.37884], [45.81766, 9.37375], [45.83283, 9.37916]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_4d7af51ddd45ee5de1e2ae401c87ebab);
+        
+    
+            poly_line_8f5500549478c37f3286ddc0331d407b.bindTooltip(
+                `<div>
+                     sentiero monte Barro
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var layer_control_f06cb4f90230e5d6bb967af06c8f33c9_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_aeef011cab5aba151d693f47d2b79a7e,
+                    "Civile" : tile_layer_340ae57f850eba4dbf8243308d743017,
+                    "Boschivo" : tile_layer_32b35ed93b33445539fa10abcad534b4,
+                },
+                overlays :  {
+                },
+            };
+            let layer_control_f06cb4f90230e5d6bb967af06c8f33c9 = L.control.layers(
+                layer_control_f06cb4f90230e5d6bb967af06c8f33c9_layers.base_layers,
+                layer_control_f06cb4f90230e5d6bb967af06c8f33c9_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_4d7af51ddd45ee5de1e2ae401c87ebab);
+
+        
+</script>
+</html>
