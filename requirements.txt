@@ -4,6 +4,8 @@ numpy
 streamlit
 streamlit-folium
 python-docx
+openpyxl
+
 
 
 
