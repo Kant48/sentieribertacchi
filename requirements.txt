@@ -3,5 +3,7 @@ pandas
 numpy
 streamlit
 streamlit-folium
+python-docx
+
 
 
