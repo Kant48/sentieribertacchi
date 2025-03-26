@@ -1,4 +1,0 @@
-INDEX VERSION 1.134+C:\APP\sentieribertacchi\.metadata\.plugins\org.eclipse.jdt.core
-715125669.index
-582318494.index
-1865797976.index
