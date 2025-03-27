@@ -1,11 +1,15 @@
 import folium
 import streamlit as st
 import pandas as pd
+import csv
+import os
+import sys  # Necessario per terminare l'app
 from streamlit_folium import st_folium
 from folium.plugins import MarkerCluster
 from io import BytesIO
 from docx import Document
-
+from docx.shared import RGBColor
+from datetime import datetime
 # Creazione della mappa
 mappa = folium.Map(location=[45.85, 9.40], zoom_start=12)
 folium.TileLayer("OpenStreetMap", name="Civile").add_to(mappa)
@@ -35,12 +39,27 @@ st.markdown(
 	""",
 	unsafe_allow_html=True
 )
-
+# Funzione per salvare il feedback nel CSV
+def salva_feedback(feedback):
+	# Mappiamo le faccine in etichette
+	feedback_mappato = {
+		"😊": "Ottimo",
+		"😐": "Buono",
+		"😞": "Scarso"
+	}
+	
+	# Otteniamo l'etichetta corrispondente al feedback
+	feedback_etichetta = feedback_mappato.get(feedback, "Sconosciuto")
+	
+	# Ottieni la data e l'ora correnti
+	ora_corrente = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+	
+	# Scrivi il feedback e la data/ora nel file CSV
+	with open("feedback.csv", mode="a", newline="", encoding="utf-8") as file:
+		writer = csv.writer(file)
+		writer.writerow([feedback_etichetta, ora_corrente])
 # Funzione per caricare le note generali con allineamento a sinistra
-import streamlit as st
-from docx import Document
 
-# Funzione per caricare le note generali con allineamento a sinistra
 def carica_note_generali():
 	doc_path = "NOTEGENERALI.docx"
 	doc = Document(doc_path)
@@ -48,26 +67,34 @@ def carica_note_generali():
 
 	# Itera su tutti i paragrafi del documento
 	for para in doc.paragraphs:
-		print(f"'{para.text.strip()}'")
-
-	for para in doc.paragraphs:
 		testo_paragrafo = para.text.strip()
 		# Esclude la riga se corrisponde a "Note Generali"
-		if testo_paragrafo and "note generali" not in testo_paragrafo.lower():
+		if testo_paragrafo and testo_paragrafo != "Note Generali":
 			if para.runs:
 				paragrafo = ""
 				for run in para.runs:
+					# Estrai il testo e la formattazione (come il colore)
 					text = run.text.replace("\n", "  \n")  # A capo in Markdown
-					# Controlla se il testo è in grassetto
+					# Se il testo è in grassetto, aggiungi tag <b>
 					if run.bold:
-						text = f"<b>{text}</b>"  # Grassetto in HTML
-					paragrafo += text  # Aggiunge il testo al contenuto del paragrafo
-				# Aggiunge il paragrafo con allineamento a sinistra
+						text = f"<b>{text}</b>"
+					# Estrai il colore del testo (se presente)
+					color = run.font.color
+					if color and isinstance(color.rgb, RGBColor):
+						color_hex = f"#{color.rgb[0]:02x}{color.rgb[1]:02x}{color.rgb[2]:02x}"
+						text = f'<span style="color: {color_hex};">{text}</span>'
+#					elif color is not None:
+#						print(f"Colore non gestito per il run: {color}")  # Debug per vedere il tipo di colore
+					
+					# Aggiungi il testo con la formattazione
+					paragrafo += text
+				# Aggiungi il paragrafo al testo completo, mantenendo il formato
 				testo_completo += f'<p style="text-align: left;">{paragrafo}</p>\n'
 	return testo_completo  # Ritorna il testo del documento
-	print('testo_completo')
+
 # Carico le note generali
 note_generali = carica_note_generali()
+
 
 # Mostro le note generali in Streamlit con HTML
 #st.markdown(note_generali, unsafe_allow_html=True)
@@ -173,9 +200,17 @@ with col1:
 	if st.session_state["mostra_note"]:
 		if st.button("Chiudi Escursioni", key="chiudi_note"):
 			st.session_state["mostra_note"] = False
- # Pulsante posizionato in basso a destra del popup
-	#if st.button("Chiudi Note Generali", key="chiudi_note"):
-	   #st.session_state["mostra_note"] = False  # Nascondi le note      
+		# Aggiungi il feedback delle faccine sotto il tasto "Chiudi note generali"
+	st.write("Ti piace questa app?")
+	feedback = st.radio("Seleziona una faccina:", ("😊", "😐", "😞"), key="feedback", index=None)
+
+
+		# Salva il feedback nel file CSV
+	if feedback:
+			salva_feedback(feedback)
+			# Mostra il feedback selezionato
+			st.write(f"Hai scelto: {feedback}")
+			st.success("Grazie per il tuo feedback!")   
 with col2:
 
 	# Aggiungi marker solo per i sentieri che corrispondono alla difficoltà selezionata
@@ -273,7 +308,7 @@ st.markdown(
 	<style>
 		.note-overlay {
 			position: fixed;
-			top: 15%;
+			top: 20%;
 			left: 50%;
 			transform: translateX(-50%);
 			background: rgba(255, 255, 255, 0.9);
@@ -284,13 +319,13 @@ st.markdown(
 			max-width: 600px;
 			text-align: center;
 			/* Altezza regolabile */
-			max-height: 400px; /* Altezza massima */
-			min-height: 150px; /* Altezza minima */
+			max-height: 450px; /* Altezza massima */
+			min-height: 100px; /* Altezza minima */
 			overflow-y: auto; /* Aggiunge scroll se supera l'altezza massima */
 		}
 		.button-container {
 			text-align: right;
-			margin-top: 20px;
+			margin-top: 30px;
 		}
 	</style>
 	""",
