@@ -36,15 +36,49 @@ st.markdown(
 	unsafe_allow_html=True
 )
 
-# Carico note generali
+# Funzione per caricare le note generali con allineamento a sinistra
+import streamlit as st
+from docx import Document
+
+# Funzione per caricare le note generali con allineamento a sinistra
 def carica_note_generali():
 	doc_path = "NOTEGENERALI.docx"
 	doc = Document(doc_path)
-	# Unisci il testo di tutti i paragrafi
-	testo_completo = "\n".join([para.text for para in doc.paragraphs])
-	return testo_completo  # Ritorna il testo del documento
+	testo_completo = ""
 
+	# Itera su tutti i paragrafi del documento
+	for para in doc.paragraphs:
+		print(f"'{para.text.strip()}'")
+
+	for para in doc.paragraphs:
+		testo_paragrafo = para.text.strip()
+		# Esclude la riga se corrisponde a "Note Generali"
+		if testo_paragrafo and "note generali" not in testo_paragrafo.lower():
+			if para.runs:
+				paragrafo = ""
+				for run in para.runs:
+					text = run.text.replace("\n", "  \n")  # A capo in Markdown
+					# Controlla se il testo è in grassetto
+					if run.bold:
+						text = f"<b>{text}</b>"  # Grassetto in HTML
+					paragrafo += text  # Aggiunge il testo al contenuto del paragrafo
+				# Aggiunge il paragrafo con allineamento a sinistra
+				testo_completo += f'<p style="text-align: left;">{paragrafo}</p>\n'
+	return testo_completo  # Ritorna il testo del documento
+	print('testo_completo')
+# Carico le note generali
 note_generali = carica_note_generali()
+
+# Mostro le note generali in Streamlit con HTML
+#st.markdown(note_generali, unsafe_allow_html=True)
+
+
+# Mostro le note generali in Streamlit
+#st.markdown(note_generali)
+
+
+
+
 
 # Centro mappa
 latzona = 45.85
@@ -134,10 +168,10 @@ with col1:
 	scelta_difficolta = st.selectbox("Scegli la difficoltà", difficolta_opzioni)
 
 	# Pulsante per mostrare le note generali
-	if st.button("Visualizza Note Generali"):
+	if st.button("Escursioni previste"):
 		st.session_state["mostra_note"] = True
 	if st.session_state["mostra_note"]:
-		if st.button("Chiudi Note Generali", key="chiudi_note"):
+		if st.button("Chiudi Escursioni", key="chiudi_note"):
 			st.session_state["mostra_note"] = False
  # Pulsante posizionato in basso a destra del popup
 	#if st.button("Chiudi Note Generali", key="chiudi_note"):
@@ -282,7 +316,6 @@ if st.session_state["mostra_note"]:
 	with st.container():
 		st.markdown(f"""
 		<div class='note-overlay'>
-			<h4>Note Generali</h4>
 			<p>{note_generali}</p>
 			<div class="button-container">
 			""", unsafe_allow_html=True)
