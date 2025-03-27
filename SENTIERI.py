@@ -149,8 +149,10 @@ with col2:
 		lat_localita = dati_localita.get("lat", 0)
 		lng_localita = dati_localita.get("lng", 0)
 		descrizione_localita = dati_localita.get('descrizione', 'Nessuna descrizione')
-		note_localita = dati_localita.get('Note', 'Nessuna nota')
-		popup_localita = f"<b>{nome_localita}</b><br>{descrizione_localita}</b><br>{note_localita}"
+		note_localita = dati_localita.get('Note', 'Nessuna nota')		
+		immlocurl = dati_localita.get('immagine','')
+		imm_localita = f'<a href="{immlocurl}" target="_blank"><img src="{immlocurl}" style="max-width: 200px; max-height: 150px; display: block; margin: 0 auto;"></a>' if immlocurl else '<i>Immagine non presente</i>'
+		popup_localita = f"<b>{nome_localita}</b><br>{descrizione_localita}</b><br>{note_localita}</b><br>{imm_localita}"
 
 		folium.Marker(
 			location=[lat_localita, lng_localita],
