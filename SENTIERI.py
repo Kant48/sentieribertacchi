@@ -53,11 +53,15 @@ def salva_feedback(feedback):
 	
 	# Ottieni la data e l'ora correnti
 	ora_corrente = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-	
+	# Verifica il percorso di lavoro corrente
+	percorso = os.getcwd()
+	st.write(f"Percorso di lavoro corrente: {percorso}")
+
 	# Scrivi il feedback e la data/ora nel file CSV
 	with open("feedback.csv", mode="a", newline="", encoding="utf-8") as file:
 		writer = csv.writer(file)
 		writer.writerow([feedback_etichetta, ora_corrente])
+	st.success("Feedback salvato!")
 # Funzione per caricare le note generali con allineamento a sinistra
 
 def carica_note_generali():
