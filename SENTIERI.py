@@ -125,6 +125,7 @@ df['Longitudine Località'] = df['Longitudine Località'].astype(str).str.replac
 df['Latitudine Passaggio'] = df['Latitudine Passaggio'].astype(str).str.replace(',', '.').astype(float)
 df['Longitudine Passaggio'] = df['Longitudine Passaggio'].astype(str).str.replace(',', '.').astype(float)
 
+
 # Dizionario delle località e telefoni
 localita = {}
 diztelefoni = {}
@@ -199,10 +200,10 @@ with col1:
 	scelta_difficolta = st.selectbox("Scegli la difficoltà", difficolta_opzioni)
 
 	# Pulsante per mostrare le note generali
-	if st.button("Escursioni previste"):
+	if st.button("NOTE sulle ESCURSIONI"):
 		st.session_state["mostra_note"] = True
 	if st.session_state["mostra_note"]:
-		if st.button("Chiudi Escursioni", key="chiudi_note"):
+		if st.button("Chiudi NOTE", key="chiudi_note"):
 			st.session_state["mostra_note"] = False
 		# Aggiungi il feedback delle faccine sotto il tasto "Chiudi note generali"
 	st.write("Ti piace questa app?")
