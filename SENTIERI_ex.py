@@ -54,14 +54,14 @@ def salva_feedback(feedback):
 	# Ottieni la data e l'ora correnti
 	ora_corrente = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 	# Verifica il percorso di lavoro corrente
-	#percorso = os.getcwd()
-	#st.write(f"Percorso di lavoro corrente: {percorso}")
+	percorso = os.getcwd()
+	st.write(f"Percorso di lavoro corrente: {percorso}")
 
 	# Scrivi il feedback e la data/ora nel file CSV
 	with open("feedback.csv", mode="a", newline="", encoding="utf-8") as file:
 		writer = csv.writer(file)
 		writer.writerow([feedback_etichetta, ora_corrente])
-	#st.success("Feedback salvato!")
+	st.success("Feedback salvato!")
 # Funzione per caricare le note generali con allineamento a sinistra
 
 def carica_note_generali():
@@ -114,9 +114,7 @@ note_generali = carica_note_generali()
 # Centro mappa
 latzona = 45.85
 longzona = 9.40
-# Definisci immagine di default
-immagine_default = "https://drive.google.com/uc?id=1VR95_Gcscs2lohKjYmcQesV2aqax8KHV"
-video_url = "https://drive.google.com/file/d/108zNkCE41q8pGpBMNHnjhgxJ-N4EVx4T/view?usp=sharing"
+
 # Caricamento del file Excel
 file_path = "inputapp.xlsx"  # Nome file senza percorso
 df = pd.read_excel(file_path)
@@ -126,7 +124,6 @@ df['Latitudine Località'] = df['Latitudine Località'].astype(str).str.replace(
 df['Longitudine Località'] = df['Longitudine Località'].astype(str).str.replace(',', '.').astype(float)
 df['Latitudine Passaggio'] = df['Latitudine Passaggio'].astype(str).str.replace(',', '.').astype(float)
 df['Longitudine Passaggio'] = df['Longitudine Passaggio'].astype(str).str.replace(',', '.').astype(float)
-df['Immagine'] = df['Immagine'].fillna('').apply(lambda x: x.strip() if isinstance(x, str) else '').replace('', immagine_default)
 
 
 # Dizionario delle località e telefoni
@@ -199,12 +196,7 @@ col1, col2 = st.columns([2, 10])  # 2 per il filtro difficoltà, 10 per la mappa
 
 # Filtro difficoltà nella colonna di sinistra
 with col1:
-	# Link del video su Google Drive (cambia con il tuo link)
-	
 	st.header("Seleziona la difficoltà del sentiero:")
-	if st.button("video presentazione 🎥"):
-		st.markdown(f"[Clicca qui per vedere il video]({video_url})", unsafe_allow_html=True)
-	
 	scelta_difficolta = st.selectbox("Scegli la difficoltà", difficolta_opzioni)
 
 	# Pulsante per mostrare le note generali
@@ -217,12 +209,12 @@ with col1:
 	st.write("Ti piace questa app?")
 	feedback = st.radio("Seleziona una faccina:", ("😊", "😐", "😞"), key="feedback", index=None)
 
-	#st.title("Sentieri - Guida all'uso")
+
 		# Salva il feedback nel file CSV
 	if feedback:
 			salva_feedback(feedback)
 			# Mostra il feedback selezionato
-			#st.write(f"Hai scelto: {feedback}")
+			st.write(f"Hai scelto: {feedback}")
 			st.success("Grazie per il tuo feedback!")   
 with col2:
 
@@ -376,7 +368,7 @@ if st.session_state["mostra_note"]:
 		st.markdown("</div></div>", unsafe_allow_html=True)
 
 # Mostra lo stato delle note per il debug
-#st.write(f"Mostra Note: {st.session_state.get('mostra_note', 'Non impostato')}")
+st.write(f"Mostra Note: {st.session_state.get('mostra_note', 'Non impostato')}")
 
 
 
